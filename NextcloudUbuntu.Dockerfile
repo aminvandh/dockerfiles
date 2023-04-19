@@ -2,9 +2,9 @@ FROM ubuntu:22.04
 
 # Install required packages + disable php prompt
 ENV DEBIAN_FRONTEND=noninteractive 
-RUN apt-get update && \
-    apt-get install -y apache2 php libapache2-mod-php php-gd php-json php-mysql php-curl \
-    php-mbstring php-intl php-imagick php-xml php-zip nano openssh-server sudo git npm node
+RUN apt-get update
+RUN apt-get install -y --fix-missing apache2 php libapache2-mod-php php-gd php-json php-mysql php-curl \
+    php-mbstring php-intl php-imagick php-xml php-zip nano openssh-server sudo git npm nodejs
 
 # Install Nextcloud PHP dependencies
 RUN apt-get install -y php-bz2 php-ldap php-smbclient php-ftp php-imap php-gmp
